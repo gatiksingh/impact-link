@@ -45,7 +45,41 @@ The system operates in a seamless, automated loop from crisis signal to resoluti
 * Required Libraries: `pandas`, `joblib`, `geopy`, `xgboost`, `scikit-learn`
 
 ### Backend Setup
-1. Clone the repository and navigate to the project folder.
-2. Install dependencies:
-   ```bash
-   pip install fastapi uvicorn pandas joblib geopy xgboost scikit-learn
+1.  Clone the repository and navigate to the project folder.
+2.  Install dependencies:
+    ```bash
+    pip install fastapi uvicorn pandas joblib geopy xgboost scikit-learn
+    ```
+3.  Ensure `volunteer_matcher.pkl` and `live_deployment.csv` are in the root directory.
+4.  Run the server:
+    ```bash
+    uvicorn main:app --reload
+    ```
+
+### Frontend Setup
+Simply open the `index.html` file in any modern web browser to access the portal. The frontend is pre-configured to communicate with the deployed FastAPI backend.
+
+---
+
+## 📡 API Endpoints
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `POST` | `/ngo/create` | Post a new emergency requirement. |
+| `GET` | `/volunteer/tasks` | Retrieve ranked tasks for a specific volunteer. |
+| `POST` | `/volunteer/action` | Accept or mark a task as completed. |
+| `GET` | `/volunteer/status/{name}` | Check a volunteer's current engagement status. |
+| `POST` | `/ngo/update` | Manually update task status (NGO-side). |
+
+---
+
+## 👥 Team: Gradient Descents
+* **Team Members**: Gatik Singh , Kornika Hajra , Chetan Sharma and Tanvi Rustagi
+* **Problem Statement**: [Smart Resource Allocation] Data-Driven Volunteer Coordination for Social Impact
+
+---
+
+## 🔗 Project Links
+* **Live Demo**: [impact-link-gradientdescent.netlify.app](https://impact-link-gradientdescent.netlify.app/)
+* **Backend API**: [impact-link-production.up.railway.app](https://impact-link-production.up.railway.app/)
+* **Video Walkthrough**: [3-Minute Demo](https://drive.google.com/file/d/1_NrD2dE0fEe4DVeABf0VT8WTwP34zaq1/view?usp=drivesdk)
